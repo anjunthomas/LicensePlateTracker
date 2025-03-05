@@ -15,7 +15,6 @@ export default function PlateDetails(){
                 <TableCell><strong>Registration Date</strong></TableCell>
                 <TableCell><strong>Car Model</strong></TableCell>
                 <TableCell><strong>Location</strong></TableCell>
-                <TableCell><strong>Validity</strong></TableCell>
             </TableRow>
         </TableHead>
 

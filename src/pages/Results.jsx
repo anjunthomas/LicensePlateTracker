@@ -1,9 +1,13 @@
 import "../styles.css";
 import PlateDetails from "../components/PlateDetails";
+import SearchBar from "../components/SearchBar";
+
 export default function Results(){
     return (
         <div>
             <h1>Search Results</h1>
+            <SearchBar />
+            
             <p>Data will be displayed here.</p>
             <PlateDetails />
         </div>
