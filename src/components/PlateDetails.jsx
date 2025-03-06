@@ -1,12 +1,6 @@
 import { Table, TableBody, TableHead, TableRow, TableCell } from '@mui/material';
 
-const products = [
-    {title: 'Cabbage', isFruit: false, id: 1},
-    {title: 'Garlic', isFruit: false, id: 2},
-    {title: 'Apple', isFruit: true, id: 3},
-];
-
-export default function PlateDetails(){
+export default function PlateDetails({results}){ // *Accepts results as a prop from Results.jsx
     return ( <Table>
         <TableHead>
             <TableRow>
@@ -18,13 +12,14 @@ export default function PlateDetails(){
             </TableRow>
         </TableHead>
 
-        <TableBody>
-            {products.map((product) => (
-                <TableRow key={product.id}>
-                    <TableCell>{product.title}</TableCell>
-                    <TableCell style={{ color: product.isFruit? 'magneta' : 'darkgreen'}}>
-                        {product.isFruit ? 'Fruit' : 'Vegetable'}
-                    </TableCell>    
+        <TableBody> {/**/}
+            {results.map((entry) => ( // looping through filtered results
+                <TableRow key={entry.id}>               {/*Creating a new row for each entry */}
+                    <TableCell>{entry.owner}</TableCell> {/*adding owner name to the cell*/}
+                    <TableCell>{entry.make}</TableCell>
+                    <TableCell>{entry.model}</TableCell>
+                    <TableCell>{entry.registrationDate}</TableCell>
+                    <TableCell>{entry.location}</TableCell>
                 </TableRow>
             ))}
         </TableBody>
@@ -33,3 +28,4 @@ export default function PlateDetails(){
 }
 
 
+// props are a way to pass data from parent component to child component in React

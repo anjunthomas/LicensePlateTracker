@@ -1,20 +1,9 @@
 import "../styles.css";
 import PlateDetails from "../components/PlateDetails";
 import SearchBar from "../components/SearchBar";
+import {useState } from "react";
 
-export default function Results(){
-    return (
-        <div>
-            <h1>Search Results</h1>
-            <SearchBar />
-            
-            <p>Data will be displayed here.</p>
-            <PlateDetails />
-        </div>
-    )
-}
-
-// in JSON format
+// dummy data in JSON format to test search functionality
 const fakeDatabase = [
     {
         owner: 'Liz Yan',
@@ -67,3 +56,29 @@ const fakeDatabase = [
         id: 6
     }, 
 ]
+
+export default function Results(){
+    const [searchTerm, setSearchTerm] = useState(""); // storing user's input, initializes searchTerm as emptystring, setSearchTerm updates state every time the user types
+
+    // filtering results based on user search
+    const filteredResults = fakeDatabase.filter((entry) =>
+        entry.owner.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        entry.make.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        entry.model.toLowerCase().includes(searchTerm.toLowerCase())
+    ); // updates dynamically everytime the user types: matching any part of owner, make, or model names
+
+    return (
+        <div>
+            <h1>Search Results</h1>
+            <SearchBar onSearch={setSearchTerm}/> {/* Passing update searchterm prop to SearchBar */}
+            
+            <p>Data will be displayed here.</p>
+            {filteredResults.length > 0 ? ( // checkign if there are matching results
+                <PlateDetails results={filteredResults} /> // if true, passing results prop to plate details 
+            ) : (
+                <p>No results found</p>
+            )}
+        </div>
+    );
+}
+

@@ -1,13 +1,12 @@
 import "./SearchBar.css";
-import { useState } from 'react'; // built in React hook
 import SearchBarChild from "./SearchBarChild";
-<SearchBarChild className="jsx"></SearchBarChild>
 
-export default function SearchBar(){
+// handles the layout of the searchbar
+export default function SearchBar({onSearch}){  // received onSearch as a prop
     return ( 
         <div className="SearchBar">
             <div className="search-bar-container">
-                <SearchBarChild />
+                <SearchBarChild onSearch={onSearch}/> {/*Passing search to search bar child */}
             </div>
         </div> 
     );  
