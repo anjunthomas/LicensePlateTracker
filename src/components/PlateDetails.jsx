@@ -4,10 +4,10 @@ export default function PlateDetails({results}){ // *Accepts results as a prop f
     return ( <Table>
         <TableHead>
             <TableRow>
-                <TableCell><strong>License</strong></TableCell>
                 <TableCell><strong>Owner Name</strong></TableCell>
-                <TableCell><strong>Registration Date</strong></TableCell>
+                <TableCell><strong>Car Make</strong></TableCell>
                 <TableCell><strong>Car Model</strong></TableCell>
+                <TableCell><strong>Registration Date</strong></TableCell>
                 <TableCell><strong>Location</strong></TableCell>
             </TableRow>
         </TableHead>

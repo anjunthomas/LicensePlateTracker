@@ -1,6 +1,7 @@
 
 .search-bar-container{ /*use . to reference classNames */
     padding-top: 5vh;
+    padding-bottom: 5vh;
     width: 40%;
     margin: auto;
     display: flex;
