@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'; // built in React hook
-import "./SearchBar.css";
+import "../styles/SearchBar.css";
 import { FaSearch } from "react-icons/fa"; // import to get search icon
 
 // handling user input
