@@ -1,0 +1,39 @@
+h1 {
+    text-align: center;
+    padding-top: 20px;
+    color: royalblue;
+    font-size: 4.5vh;
+    
+}
+
+.results-container {
+    background-color: white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.results-table {
+    width: 700px; 
+    border-collapse: collapse;
+}
+
+.results-table th, .results-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.results-image-container {
+    width: 350px; /* ✅ Limits the size of the image */
+    text-align: center;
+}
+
+.results-image-container img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
