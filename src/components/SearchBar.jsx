@@ -1,4 +1,4 @@
-import "./SearchBar.css";
+import "../styles/SearchBar.css";
 import SearchBarChild from "./SearchBarChild";
 
 // handles the layout of the searchbar
