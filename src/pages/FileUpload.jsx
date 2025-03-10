@@ -1,3 +1,4 @@
+import "../styles/DragDrop.css"
 
 export default function FileUpload() {
     return (
