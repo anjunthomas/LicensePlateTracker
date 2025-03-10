@@ -6,8 +6,10 @@
     transition: border-color 0.3s;
   }
   
-  /*
   .file-upload.dragging {
     border-color: #007bff;
   }
-*/
+
+  p {
+    text-align: center;
+  }
