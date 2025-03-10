@@ -1,7 +1,6 @@
 import "../styles/DragDrop.css" // CSS styling
 import React from 'react';
 import DragDrop from "../components/DragDrop"
-import { useDropzone } from 'react-dropzone';
 
 export default function FileUpload() {
 
