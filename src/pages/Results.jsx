@@ -1,7 +1,7 @@
 import "../styles/Results.css";
 import PlateDetails from "../components/PlateDetails";
 import SearchBar from "../components/SearchBar";
-import {useState } from "react";
+import {useState, useEffect } from "react";
 import PlateImage from "../components/PlateImage";
 
 // dummy data in JSON format to test search functionality
@@ -92,9 +92,16 @@ const fakeDatabase = [
 
 export default function Results(){
     const [searchTerm, setSearchTerm] = useState(""); // storing user's input, initializes searchTerm as emptystring, setSearchTerm updates state every time the user types
+    const [allEntries, setAllEntries] = useState(fakeDatabase);
+
+    // loading new entries from local storage
+    useEffect(() => {
+        const storedEntries = JSON.parse(localStorage.getItem("userEntries")) || [];
+        setAllEntries([...fakeDatabase, ...storedEntries]);
+    }, []);
 
     // filtering results based on user search
-    const filteredResults = fakeDatabase.filter((entry) =>
+    const filteredResults = allEntries.filter((entry) =>
         entry.owner.toLowerCase().includes(searchTerm.toLowerCase()) ||
         entry.make.toLowerCase().includes(searchTerm.toLowerCase()) ||
         entry.model.toLowerCase().includes(searchTerm.toLowerCase())
